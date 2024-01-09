@@ -5,15 +5,15 @@ export type UserType = {
     _id: string;
     email: string;
     password: string;
-    first_name: string;
-    last_name: string;
+    firstName: string;
+    lastName: string;
 }
 
 const userSchema = new mongoose.Schema({
     email: { type: String, require: true, unique: true },
     password: { type: String, require: true },
-    first_name: { type: String, require: true },
-    last_name: { type: String, require: true },
+    firstName: { type: String, require: true },
+    lastName: { type: String, require: true },
 })
 
 userSchema.pre("save", async function (next) {

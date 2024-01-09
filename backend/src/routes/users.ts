@@ -6,8 +6,8 @@ const router = express.Router();
 
 
 router.post('/register', [
-    check("first_name", "First Name is required ").isString(),
-    check("last_name", "Last Name is required ").isString(),
+    check("firstName", "First Name is required ").isString(),
+    check("lastName", "Last Name is required ").isString(),
     check("email", "Email is required ").isEmail(),
     check("password", "More than 6 characters are required ").isLength({
         min: 6,
@@ -21,9 +21,7 @@ router.post('/register', [
         })
     }
     try {
-        let user = await User.findOne({
-            email: req.body.email
-        })
+        let user = await User.findOne({ email: req.body.email })
 
         if (user) return res.status(400).json({ message: 'User already exist !' })
 
@@ -40,7 +38,7 @@ router.post('/register', [
             maxAge: 86400000,
         })
 
-        return res.sendStatus(200);
+        return res.status(200).send({ message : "User Registered OK"});
     } catch (error) {
         console.log(error)
         res.status(500).send({ message: 'Something went wrong' });
