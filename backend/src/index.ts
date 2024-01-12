@@ -7,6 +7,7 @@ import authRoutes from './routes/auth'
 import cookieParser from 'cookie-parser';
 
 mongoose.connect(process.env.MONGODB_URL as string)
+    .then(() => console.log('connected to database', process.env.MONGODB_URL))
 
 
 const app = express();
