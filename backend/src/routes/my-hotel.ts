@@ -50,8 +50,6 @@ router.post('/',
             await hotel.save();
 
             res.status(201).send(hotel);
-
-
         } catch (error) {
             console.log("Error creating Hotel")
             res.status(500).json({ message: 'Something went wrong' })
