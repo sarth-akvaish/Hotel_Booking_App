@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import * as apiClient from "../api-clients";
 import { BsBuilding, BsMap } from "react-icons/bs";
 import { BiHotel, BiMoney, BiStar } from "react-icons/bi";
-import { hotelTypes } from "../config/hotel-options-config";
 const MyHotel = () => {
   const { data: hotelData } = useQuery(
     "fetchMyHotels",
