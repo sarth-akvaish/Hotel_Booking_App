@@ -1,5 +1,6 @@
 import { RegisterFormData } from "./pages/Register";
 import { SignInFormData } from "./pages/SignIn";
+import { HotelType } from '../../backend/src/shared/types'
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
 
@@ -54,7 +55,6 @@ export const validateToken = async () => {
 
 }
 
-
 export const signOut = async () => {
 
     const response = await fetch(`${API_BASE_URL}/api/auth/logout`, {
@@ -81,4 +81,41 @@ export const addMyHotel = async (hotelFormData: FormData) => {
 
     return response.json();
 
+}
+
+export const fetchMyHotels = async (): Promise<HotelType[]> => {
+
+    const response = await fetch(`${API_BASE_URL}/api/my-hotels`, {
+        credentials: 'include'
+    })
+
+    if (!response.ok) throw new Error('Error fetching hotels')
+
+    return response.json();
+}
+
+export const fetchMyHotelsById = async (hotelId: string): Promise<HotelType> => {
+    const response = await fetch(`${API_BASE_URL}/api/my-hotels/${hotelId}`, {
+        credentials: 'include'
+    })
+
+    if (!response.ok)
+        throw new Error('Error fetching hotels')
+
+    return response.json();
+
+}
+
+export const updatemyHotelById = async (hotelFormData: FormData) => {
+    const res = await fetch(`${API_BASE_URL}/api/my-hotels/${hotelFormData.get('hotelId')}`, {
+        method: 'PUT',
+        body: hotelFormData,
+        credentials: 'include'
+    })
+
+    if (!res.ok) {
+        throw new Error('Failed to update hotel')
+    }
+
+    return res.json();
 }
