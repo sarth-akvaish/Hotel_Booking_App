@@ -16,6 +16,7 @@ const Search = () => {
   const [selectedHotelTypes, setSelectedHotelTypes] = useState<string[]>([]);
   const [selectedFacilities, setSelectedFacilities] = useState<string[]>([]);
   const [selectedPrice, setSelectedPrice] = useState<number | undefined>();
+  const [sortoption, setSortoption] = useState<string>("");
 
   const searchParams = {
     destination: search.destination,
@@ -28,6 +29,7 @@ const Search = () => {
     types: selectedHotelTypes,
     facilities: selectedFacilities,
     maxPrice: selectedPrice?.toString(),
+    sortoption,
   };
 
   const { data: hotelData } = useQuery(["searchHotels", searchParams], () =>
@@ -91,10 +93,23 @@ const Search = () => {
       <div className="flex flex-col gap-5">
         <div className="flex justify-between items-center">
           <span className="text-xl font-bold">
-            {hotelData?.pagination.total} Hotels found
+            {hotelData?.data.length} Hotels found
             {search.destination ? ` in ${search.destination}` : ""}
           </span>
-          {/* TODO sort options */}
+          <select
+            value={sortoption}
+            onChange={(ev) => setSortoption(ev.target.value)}
+            className="border p-2 rounded-md outline-none"
+          >
+            <option value="">Sort By</option>
+            <option value="starRating">Star Rating</option>
+            <option value="pricePerNightAsc">
+              Price Per Night (Low to High)
+            </option>
+            <option value="pricePerNightDesc">
+              Price Per Night (High to Low)
+            </option>
+          </select>
         </div>
         {hotelData?.data.map((hotel) => (
           <SearchResultCard hotel={hotel} />
