@@ -47,6 +47,7 @@ const SearchBar = () => {
           onChange={(event) => setDestination(event.target.value)}
         />
       </div>
+
       <div className="flex bg-white px-2 py-1 gap-2">
         <label className="items-center flex">
           Adults:
@@ -71,6 +72,7 @@ const SearchBar = () => {
           />
         </label>
       </div>
+      
       <div>
         <DatePicker
           selected={checkIn}
