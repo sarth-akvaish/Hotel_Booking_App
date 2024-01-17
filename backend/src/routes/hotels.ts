@@ -146,7 +146,7 @@ router.post('/:hotelId/bookings', verifyToken, async (req: Request, res: Respons
         }
 
         const hotel = await Hotel.findOneAndUpdate({ _id: req.params.hotelId }, {
-            $push: { bookings: newBooking, new: true },
+            $push: { bookings: newBooking },
         })
 
         if (!hotel) return res.status(400).json({ message: 'Hotel not found' })
