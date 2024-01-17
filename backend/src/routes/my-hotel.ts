@@ -40,6 +40,7 @@ router.post('/',
             newHotel.lastUpdated = new Date();
             newHotel.userId = req.userId;
 
+            newHotel.bookings = [];
             const hotel = new Hotel(newHotel)
             await hotel.save();
 
