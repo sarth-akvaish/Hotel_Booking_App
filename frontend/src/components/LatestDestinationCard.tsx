@@ -8,7 +8,7 @@ const LatestDestinationCard = ({ hotel }: Props) => {
   return (
     <Link
       to={`/detail/${hotel._id}`}
-      className="relative cursor-pointer overflow-hidden rounded-md"
+      className="hover:scale-105 transform ease-in relative cursor-pointer overflow-hidden rounded-md"
     >
       <div className="h-[300px]">
         <img

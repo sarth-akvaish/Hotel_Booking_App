@@ -31,30 +31,30 @@ const MyHotel = () => {
           <div className="flex flex-col gap-5 justify-between border border-slate-300 rounded-lg p-8">
             <h2 className="text-2xl font-bold">{hotel.name}</h2>
             <div className="whitespace-pre-line">{hotel.description}</div>
-            <div className="grid grid-cols-5 gap-2">
-              <div className="border border-slate-300 rounded-sm flex items-center p-3">
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
+              <div className="border border-slate-300 rounded-sm flex items-center p-1 text-[14px] sm:text-[16px] sm:p-3">
                 <BsMap className="mr-1" />
                 {hotel.city},{hotel.country}
               </div>
-              <div className="border border-slate-300 rounded-sm flex items-center p-3">
+              <div className="border border-slate-300 rounded-sm flex items-center p-1 text-[14px] sm:text-[16px] sm:p-3">
                 <BsBuilding className="mr-1" />
                 {hotel.type}
               </div>
-              <div className="border border-slate-300 rounded-sm flex items-center p-3">
+              <div className="border border-slate-300 rounded-sm flex items-center p-1 text-[14px] sm:text-[16px] sm:p-3">
                 <BiMoney className="mr-1" />${hotel.pricePerNight} per night
               </div>
-              <div className="border border-slate-300 rounded-sm flex items-center p-3">
+              <div className="border border-slate-300 rounded-sm flex items-center p-1 text-[14px] sm:text-[16px] sm:p-3">
                 <BiHotel className="mr-1" />
                 {hotel.adultCount} adults,{hotel.childCount}children
               </div>
-              <div className="border border-slate-300 rounded-sm flex items-center p-3">
+              <div className="border border-slate-300 rounded-sm flex items-center p-1 text-[14px] sm:text-[16px] sm:p-3">
                 <BiStar className="mr-1" />
                 {hotel.starRating} Star Rating
               </div>
             </div>
             <span className="flex justify-end">
               <Link
-                className="flex bg-blue-600 text-white text-xl font-bold p-2 hover:bg-blue-500"
+                className="flex bg-blue-600 rounded-lg text-white text-xl font-bold p-2 hover:bg-blue-500"
                 to={`/edit-hotel/${hotel._id}`}
               >
                 View Details

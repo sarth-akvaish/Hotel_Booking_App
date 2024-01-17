@@ -35,7 +35,7 @@ const SearchBar = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="-mt-8 p-2 bg-orange-400 rounded shadow-md grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 items-center gap-2"
+      className="-mt-8 p-2 bg-orange-400 rounded shadow-md grid grid-cols-2 md:grid-cols-4 2xl:grid-cols-5 items-center gap-2"
     >
       <div className="flex flex-row items-center flex-1 bg-white p-2 ">
         <MdTravelExplore size={25} className="mr-2" />
@@ -47,7 +47,6 @@ const SearchBar = () => {
           onChange={(event) => setDestination(event.target.value)}
         />
       </div>
-
       <div className="flex bg-white px-2 py-1 gap-2">
         <label className="items-center flex">
           Adults:
@@ -72,7 +71,6 @@ const SearchBar = () => {
           />
         </label>
       </div>
-      
       <div>
         <DatePicker
           selected={checkIn}
@@ -83,7 +81,7 @@ const SearchBar = () => {
           minDate={minDate}
           maxDate={maxDate}
           placeholderText="Check-in Date here"
-          className="min-w-full bg-white p-2 focus:outline-none"
+          className="w-full md:min-w-full bg-white p-2 focus:outline-none"
           wrapperClassName="min-w-full"
         />
       </div>
@@ -97,7 +95,7 @@ const SearchBar = () => {
           minDate={minDate}
           maxDate={maxDate}
           placeholderText="Check-in Date here"
-          className="min-w-full bg-white p-2 focus:outline-none"
+          className="w-full md:min-w-full bg-white p-2 focus:outline-none"
           wrapperClassName="min-w-full"
         />
       </div>

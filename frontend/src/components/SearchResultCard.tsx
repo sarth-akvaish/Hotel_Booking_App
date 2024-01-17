@@ -31,10 +31,9 @@ const SearchResultCard = ({ hotel }: Props) => {
           <Link to={`/detail/${hotel._id}`} className="text-2xl font-bold cursor-pointer">{hotel.name}</Link>
         </div>
         <div>
-          <div className="line-clamp-4">{hotel.description}</div>
+          <div className="line-clamp-6">{hotel.description}</div>
         </div>
-
-        <div className="grid grid-cols-2 items-end whitespace-nowrap">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-end whitespace-nowrap">
           <div className="flex gap-1 items-center">
             {hotel.facilities.slice(0, 3).map((facility) => (
               <span className="bg-slate-300 p-1 rounded-lg font-bold text-xs whitespace-nowrap">
@@ -46,9 +45,9 @@ const SearchResultCard = ({ hotel }: Props) => {
                 `+${hotel.facilities.length - 3} more`}
             </span>
           </div>
-          <div className="flex flex-col items-end gap-1">
-            <span className="font-bold">${hotel.pricePerNight}</span>
-            <Link to={`/detail/${hotel._id}`} className="bg-blue-600 rounded text-white h-full p-2 font-bold text-xl hover:bg-blue-500 max-w-fit">
+          <div className="flex flex-row justify-between md:flex-col items-start md:items-end gap-1">
+            <span className="font-bold p-2">${hotel.pricePerNight}</span>
+            <Link to={`/detail/${hotel._id}`} className="bg-blue-600 rounded text-white h-full p-1 md:p-2 font-bold text-[16px] md:text-xl hover:bg-blue-500 max-w-fit">
               View More
             </Link>
           </div>

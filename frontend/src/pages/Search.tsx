@@ -65,8 +65,8 @@ const Search = () => {
     );
   };
   return (
-    <div className="grid grid-cols-1 gap-5 lg:grid-cols-[250px_1fr]">
-      <div className="rounded-lg border border-slate-300 p-5 h-fit sticky top-10">
+    <div className="grid grid-cols-[100px_1fr] gap-3 md:gap-5 md:grid-cols-[200px_1fr] lg:grid-cols-[250px_1fr]">
+      <div className="rounded-lg border border-slate-300 p-2 md:p-5 h-fit sticky top-10">
         <div className="space-y-5">
           <h3 className="text-lg font-semibold border-b border-slate-300 pb-5">
             Filter by:
@@ -90,16 +90,16 @@ const Search = () => {
           />
         </div>
       </div>
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-3 md:gap-5">
         <div className="flex justify-between items-center">
-          <span className="text-xl font-bold">
+          <span className="text-[16px] md:text-xl font-bold">
             {hotelData?.pagination.total} Hotels found
             {search.destination ? ` in ${search.destination}` : ""}
           </span>
           <select
             value={sortoption}
             onChange={(ev) => setSortoption(ev.target.value)}
-            className="border p-2 rounded-md outline-none"
+            className="border p-2 w-[150px] md:w-[220px] text-[14px] md:text-[18px] rounded-md outline-none"
           >
             <option value="">Sort By</option>
             <option value="starRating">Star Rating</option>

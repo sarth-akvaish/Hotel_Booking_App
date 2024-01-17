@@ -18,14 +18,14 @@ const Detail = () => {
   return (
     <div className="space-y-6">
       <div>
-        <span className="flex">
+        <span className="flex flex-row gap-2">
           {Array.from({ length: hotel.starRating }).map(() => (
             <AiFillStar className="fill-yellow-300" />
           ))}
         </span>
         <h1 className="text-3xl font-bold">{hotel.name}</h1>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4">
         {hotel.imageUrls.map((img) => (
           <div className="h-[300px]">
             <img
@@ -37,17 +37,17 @@ const Detail = () => {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-2">
+      <div className="grid  grid-cols-4 gap-2">
         {hotel.facilities.map((facility) => (
-          <div className="border border-slate-300 rounded-sm p-2">
+          <div className="border border-slate-300 text-[12px] sm:text-[16px] rounded-sm p-1 md:p-2">
             {facility}
           </div>
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr]">
+      <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr]">
         <div className="whitespace-pre-line">{hotel.description}</div>
-        <div className="h-fit">
+        <div className="h-fit flex items-center justify-center">
           <GuestInfoForm
             pricePerNight={hotel.pricePerNight}
             hotelId={hotel._id}

@@ -82,7 +82,7 @@ const GuestInfoForm = ({ hotelId, pricePerNight }: Props) => {
               minDate={minDate}
               maxDate={maxDate}
               placeholderText="Check-in Date here"
-              className="min-w-full bg-white p-2 focus:outline-none"
+              className="min-w-full rounded-md bg-white p-2 focus:outline-none"
               wrapperClassName="min-w-full"
             />
           </div>
@@ -97,15 +97,15 @@ const GuestInfoForm = ({ hotelId, pricePerNight }: Props) => {
               minDate={minDate}
               maxDate={maxDate}
               placeholderText="Check-out Date here"
-              className="min-w-full bg-white p-2 focus:outline-none"
+              className="min-w-full bg-white p-2 rounded-md focus:outline-none"
               wrapperClassName="min-w-full"
             />
           </div>
-          <div className="flex bg-white px-2 py-1 gap-2">
+          <div className="flex bg-white px-2 py-1 gap-2 rounded-md">
             <label className="items-center flex">
               Adults:
               <input
-                className="w-full p-1 focus:outline-none font-bold"
+                className="w-full p-1 focus:outline-none rounded-md font-bold"
                 type="number"
                 min={1}
                 max={20}
@@ -119,10 +119,10 @@ const GuestInfoForm = ({ hotelId, pricePerNight }: Props) => {
                 })}
               />
             </label>
-            <label className="items-center flex">
+            <label className="items-center flex ">
               Children:
               <input
-                className="w-full p-1 focus:outline-none font-bold"
+                className="w-full p-1 focus:outline-none font-bold "
                 type="number"
                 min={0}
                 max={20}
@@ -138,11 +138,11 @@ const GuestInfoForm = ({ hotelId, pricePerNight }: Props) => {
             )}
           </div>
           {isLoggedin ? (
-            <button className="bg-blue-600 hover:bg-blue-500 text-xl font-bold text-white h-full p-1">
+            <button className="bg-blue-600 rounded-md hover:bg-blue-500 text-xl font-bold text-white h-full p-1">
               Book Now
             </button>
           ) : (
-            <button className="bg-blue-600 hover:bg-blue-500 text-xl font-bold text-white h-full p-2">
+            <button className="bg-blue-600 rounded-md hover:bg-blue-500 text-xl font-bold text-white h-full p-2">
               Signin to Book
             </button>
           )}
